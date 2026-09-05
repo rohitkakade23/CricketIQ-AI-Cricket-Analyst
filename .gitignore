@@ -1,0 +1,13 @@
+# Block dependencies anywhere in the project
+node_modules/
+client/node_modules/
+server/node_modules/
+
+# Block all environment files
+.env
+server/.env
+client/.env
+
+# Block build outputs
+dist/
+client/dist/
