@@ -1,0 +1,478 @@
+/* ========================================
+   ANALYTICS PAGE
+======================================== */
+
+.analytics-page {
+  width: 100%;
+  min-width: 0;
+  color: #f3f4f6;
+}
+
+/* ========================================
+   PAGE HEADER
+======================================== */
+
+.analytics-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 32px;
+}
+
+.analytics-header h1 {
+  margin: 0 0 8px;
+  color: #f3f4f6;
+  font-size: 38px;
+  font-weight: 700;
+  letter-spacing: -1px;
+}
+
+.analytics-header p {
+  margin: 0;
+  color: #8b9bad;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* ========================================
+   MAIN CONTENT LAYOUT
+======================================== */
+
+.analytics-content {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  width: 100%;
+  min-width: 0;
+}
+
+/* ========================================
+   ANALYTICS OVERVIEW CARDS
+======================================== */
+
+.analytics-overview {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  width: 100%;
+  min-width: 0;
+}
+
+.analytics-stat-card {
+  min-width: 0;
+  padding: 24px;
+  background: #101820;
+  border: 1px solid #263544;
+  border-radius: 16px;
+  transition:
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.analytics-stat-card:hover {
+  border-color: #34485e;
+  transform: translateY(-2px);
+}
+
+.analytics-stat-card span {
+  display: block;
+  margin-bottom: 16px;
+  color: #8b9bad;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.analytics-stat-card h2 {
+  margin: 0 0 10px;
+  color: #f3f4f6;
+  font-size: 34px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.analytics-stat-card p {
+  margin: 0;
+  color: #64748b;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* ========================================
+   BATTING LEADERS SECTION
+======================================== */
+
+.analytics-leaders {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  margin-top: 0;
+  padding: 24px;
+  background: #080d10;
+  border: 1px solid #263544;
+  border-radius: 16px;
+}
+
+.analytics-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 22px;
+}
+
+.analytics-section-header h2 {
+  margin: 0 0 8px;
+  color: #f3f4f6;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.analytics-section-header p {
+  margin: 0;
+  color: #8b9bad;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* ========================================
+   LEADERBOARD LIST
+======================================== */
+
+.analytics-leaders-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  min-width: 0;
+}
+
+.analytics-leader-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  padding: 16px;
+  background: #101820;
+  border: 1px solid #263544;
+  border-radius: 12px;
+  transition:
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.analytics-leader-card:hover {
+  border-color: #3b82f6;
+  transform: translateY(-2px);
+}
+
+/* Rank number */
+
+.analytics-leader-rank {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  background: #1d3048;
+  border-radius: 10px;
+  color: #93c5fd;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+/* Player information */
+
+.analytics-leader-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.analytics-leader-info h3 {
+  margin: 0 0 6px;
+  color: #f3f4f6;
+  font-size: 16px;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+.analytics-leader-info p {
+  margin: 0;
+  color: #9ca3af;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+/* Runs */
+
+.analytics-leader-runs {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  flex-shrink: 0;
+  min-width: 70px;
+}
+
+.analytics-leader-runs strong {
+  color: #f3f4f6;
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.analytics-leader-runs span {
+  margin-top: 4px;
+  color: #8b9bad;
+  font-size: 12px;
+}
+
+/* ========================================
+   LOADING, ERROR AND EMPTY STATES
+======================================== */
+
+.analytics-state {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 32px 24px;
+  background: #101820;
+  border: 1px solid #263544;
+  border-radius: 16px;
+  text-align: center;
+}
+
+.analytics-state p {
+  margin: 0;
+  color: #8b9bad;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.analytics-error h3 {
+  margin: 0 0 10px;
+  color: #f3f4f6;
+  font-size: 18px;
+}
+
+.analytics-error button {
+  margin-top: 18px;
+  padding: 10px 18px;
+  background: #1d3048;
+  border: 1px solid #34485e;
+  border-radius: 8px;
+  color: #f3f4f6;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.analytics-error button:hover {
+  background: #263b55;
+}
+
+.analytics-empty {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 28px 20px;
+  background: #101820;
+  border: 1px dashed #263544;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.analytics-empty p {
+  margin: 0;
+  color: #8b9bad;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* ========================================
+   TABLET RESPONSIVENESS
+======================================== */
+
+@media (max-width: 900px) {
+  .analytics-header h1 {
+    font-size: 32px;
+  }
+
+  .analytics-overview {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .analytics-stat-card {
+    padding: 20px;
+  }
+
+  .analytics-leaders {
+    padding: 20px;
+  }
+}
+
+/* ========================================
+   MOBILE RESPONSIVENESS
+======================================== */
+
+@media (max-width: 600px) {
+  .analytics-header {
+    margin-bottom: 24px;
+  }
+
+  .analytics-header h1 {
+    font-size: 28px;
+    letter-spacing: -0.5px;
+  }
+
+  .analytics-header p {
+    font-size: 14px;
+  }
+
+  .analytics-content {
+    gap: 20px;
+  }
+
+  .analytics-overview {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 14px;
+  }
+
+  .analytics-stat-card {
+    padding: 20px;
+    border-radius: 12px;
+  }
+
+  .analytics-stat-card h2 {
+    font-size: 30px;
+  }
+
+  .analytics-leaders {
+    padding: 16px;
+    border-radius: 12px;
+  }
+
+  .analytics-section-header {
+    margin-bottom: 18px;
+  }
+
+  .analytics-section-header h2 {
+    font-size: 20px;
+  }
+
+  .analytics-section-header p {
+    font-size: 13px;
+  }
+
+  .analytics-leaders-list {
+    gap: 10px;
+  }
+
+  .analytics-leader-card {
+    gap: 12px;
+    padding: 12px;
+  }
+
+  .analytics-leader-rank {
+    width: 34px;
+    height: 34px;
+    border-radius: 8px;
+    font-size: 14px;
+  }
+
+  .analytics-leader-info h3 {
+    font-size: 14px;
+  }
+
+  .analytics-leader-info p {
+    font-size: 11px;
+  }
+
+  .analytics-leader-runs {
+    min-width: 55px;
+  }
+
+  .analytics-leader-runs strong {
+    font-size: 21px;
+  }
+
+  .analytics-leader-runs span {
+    font-size: 11px;
+  }
+}
+
+/* ========================================
+   SMALL MOBILE SCREENS
+======================================== */
+
+@media (max-width: 380px) {
+  .analytics-leaders {
+    padding: 12px;
+  }
+
+  .analytics-leader-card {
+    gap: 8px;
+    padding: 10px;
+  }
+
+  .analytics-leader-rank {
+    width: 30px;
+    height: 30px;
+  }
+
+  .analytics-leader-runs {
+    min-width: 48px;
+  }
+
+  .analytics-leader-runs strong {
+    font-size: 18px;
+  }
+}
+
+
+/* Analytics Chart Card */
+.analytics-chart-card {
+  width: 100%;
+  padding: 24px;
+  /* background: #151c2c;
+  border: 1px solid #30394b; */
+  background: #101820;
+  border: 1px solid #263544;
+  border-radius: 14px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.analytics-chart-card .analytics-section-header {
+  margin-bottom: 24px;
+}
+
+.analytics-chart-card .analytics-section-header h2 {
+  margin: 0 0 8px;
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.analytics-chart-card .analytics-section-header p {
+  margin: 0;
+  color: #aab4c5;
+  font-size: 14px;
+}
+
+.analytics-chart-card .analytics-empty {
+  padding: 30px 16px;
+  text-align: center;
+  color: #aab4c5;
+}
+
+@media (max-width: 600px) {
+  .analytics-chart-card {
+    padding: 16px;
+  }
+
+  .analytics-chart-card .analytics-section-header h2 {
+    font-size: 18px;
+  }
+}

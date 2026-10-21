@@ -1,6 +1,13 @@
 const express = require("express");
 const cors = require("cors");
 require("dotenv").config();
+const playerRoutes = require("./routes/playerRoutes");
+const matchRoutes = require("./routes/matchRoutes");
+require("./models/Team");
+const teamRoutes = require("./routes/teamRoutes");
+
+
+
 
 const connectDB = require("./config/db");
 
@@ -20,6 +27,11 @@ app.get("/api/health", (req, res) => {
     message: "CricketIQ API is running",
   });
 });
+
+app.use("/api/teams", teamRoutes);
+app.use("/api/matches", matchRoutes);
+app.use("/api/players", playerRoutes);
+
 
 app.get("/", (req, res) => {
     res.send("Welcome to the CricketIQ Backend API!");

@@ -1,0 +1,455 @@
+.match-details-page {
+  width: 100%;
+}
+
+.match-back-button {
+  margin-bottom: 28px;
+  padding: 9px 14px;
+  border: 1px solid #243242;
+  border-radius: 9px;
+  background: transparent;
+  color: #9aa8b7;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.match-back-button:hover {
+  border-color: #34475a;
+  color: #f5f7fa;
+  background: #101820;
+}
+
+.match-details-header {
+  padding: 28px;
+  border: 1px solid #243242;
+  border-radius: 18px;
+  background: #101820;
+}
+
+.match-details-label {
+  margin: 0 0 10px;
+  color: #718096;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+.match-details-header h1 {
+  margin: 0;
+  color: #f5f7fa;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.match-details-subtitle {
+  margin: 10px 0 0;
+  color: #8493a5;
+  font-size: 14px;
+}
+
+.match-details-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-top: 28px;
+}
+
+.match-detail-card {
+  padding: 20px;
+  border: 1px solid #243242;
+  border-radius: 14px;
+  background: #0d151d;
+}
+
+.match-detail-card span {
+  display: block;
+  margin-bottom: 10px;
+  color: #718096;
+  font-size: 12px;
+}
+
+.match-detail-card strong {
+  color: #f5f7fa;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+@media (max-width: 900px) {
+  .match-details-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .match-details-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .match-details-header h1 {
+    font-size: 24px;
+  }
+}
+
+.match-result-section {
+  margin-top: 28px;
+}
+
+.match-result-card {
+  padding: 22px;
+  border: 1px solid #243242;
+  border-radius: 14px;
+  background: #101820;
+}
+
+.match-result-card p {
+  margin: 8px 0 0;
+  color: #8493a5;
+  font-size: 13px;
+}
+
+.match-result-card span {
+  display: block;
+  margin-bottom: 8px;
+  color: #718096;
+  font-size: 12px;
+}
+
+.match-result-card strong {
+  color: #f5f7fa;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.match-teams-section {
+  margin-top: 28px;
+}
+
+.match-teams-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.match-team-card {
+  padding: 22px;
+  border: 1px solid #243242;
+  border-radius: 14px;
+  background: #101820;
+}
+
+.match-team-card span {
+  display: block;
+  margin-bottom: 8px;
+  color: #718096;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+}
+
+.match-team-card strong {
+  color: #f5f7fa;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+@media (max-width: 600px) {
+  .match-teams-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.match-overview-section {
+  margin-top: 28px;
+}
+
+.match-overview-card {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  margin-top: 16px;
+  overflow: hidden;
+  border: 1px solid #243242;
+  border-radius: 16px;
+  background: #243242;
+}
+
+.match-overview-card > div {
+  padding: 20px;
+  background: #0d151d;
+}
+
+.match-overview-card span {
+  display: block;
+  margin-bottom: 8px;
+  color: #718096;
+  font-size: 12px;
+}
+
+.match-overview-card strong {
+  color: #dce3ea;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+@media (max-width: 600px) {
+  .match-overview-card {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Batting Scorecard */
+
+.match-scorecard-section {
+  margin-top: 28px;
+}
+
+.scorecard-table {
+  margin-top: 16px;
+  border: 1px solid #243242;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #101820;
+}
+
+.scorecard-row {
+  display: grid;
+  grid-template-columns: 2fr repeat(5, 1fr);
+  align-items: center;
+  padding: 16px 20px;
+  border-bottom: 1px solid #243242;
+  gap: 12px;
+}
+
+.scorecard-row:last-child {
+  border-bottom: none;
+}
+
+.scorecard-row span,
+.scorecard-row strong {
+  font-size: 14px;
+  color: #c7d0da;
+}
+
+.scorecard-row strong {
+  color: #f1f5f9;
+  font-weight: 600;
+}
+
+.scorecard-header {
+  background: #16212d;
+}
+
+.scorecard-header span {
+  color: #718096;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+}
+
+.scorecard-header span:not(:first-child),
+.scorecard-row span:not(:first-child) {
+  text-align: right;
+}
+
+@media (max-width: 700px) {
+  .scorecard-table {
+    overflow-x: auto;
+  }
+
+  .scorecard-row {
+    min-width: 650px;
+  }
+}
+
+.bowling-scorecard-header {
+  grid-template-columns: 2fr repeat(4, 1fr);
+}
+
+.bowling-scorecard-row {
+  grid-template-columns: 2fr repeat(4, 1fr);
+}
+
+
+/* AI Match Summary */
+
+.ai-match-summary-section {
+  margin-top: 32px;
+}
+
+/* .generate-ai-button {
+  margin-top: 16px;
+  padding: 11px 18px;
+  border: 1px solid #334155;
+  border-radius: 10px;
+  background: #16212d;
+  color: #e2e8f0;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.generate-ai-button:hover {
+  background: #1d2b3a;
+}
+
+.generate-ai-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+} */
+
+.generate-ai-button {
+  padding: 12px 18px;
+  background: #0284c7;
+  border: none;
+  border-radius: 8px;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.generate-ai-button:hover {
+  background: #0369a1;
+}
+
+.generate-ai-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.ai-match-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.ai-match-card {
+  padding: 22px;
+  border: 1px solid #243242;
+  border-radius: 16px;
+  background: #101820;
+}
+
+.ai-match-card span {
+  display: block;
+  margin-bottom: 12px;
+  color: #718096;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1.6px;
+}
+
+.ai-match-card p {
+  margin: 0;
+  color: #c7d0da;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.ai-match-card strong {
+  color: #f1f5f9;
+}
+
+.ai-match-summary {
+  grid-column: 1 / -1;
+}
+
+.ai-match-error {
+  margin-top: 12px;
+  color: #ef9a9a;
+  font-size: 13px;
+}
+
+@media (max-width: 700px) {
+  .ai-match-summary-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ai-match-summary {
+    grid-column: auto;
+  }
+}
+
+
+.match-details-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  min-height: 300px;
+  color: #94a3b8;
+  font-size: 14px;
+}
+
+.match-details-state p {
+  margin: 0;
+}
+
+.match-details-loader {
+  width: 28px;
+  height: 28px;
+  border: 3px solid #243242;
+  border-top-color: #60a5fa;
+  border-radius: 50%;
+  animation: match-details-spin 0.8s linear infinite;
+}
+
+@keyframes match-details-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.match-details-error {
+  margin-top: 24px;
+  padding: 36px 24px;
+  border: 1px solid #3b2a2a;
+  border-radius: 16px;
+  background: #151213;
+  text-align: center;
+}
+
+.match-details-error h3 {
+  margin: 0 0 8px;
+  color: #f1f5f9;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.match-details-error p {
+  margin: 0 0 18px;
+  color: #94a3b8;
+  font-size: 14px;
+}
+
+.match-details-retry-button {
+  padding: 10px 16px;
+  border: 1px solid #334155;
+  border-radius: 8px;
+  background: #1e293b;
+  color: #e2e8f0;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.match-details-retry-button:hover {
+  background: #29384b;
+}
+
+.match-details-retry-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.innings-scorecard-title {
+  margin: 20px 0 12px;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+}

@@ -1,0 +1,249 @@
+/* AI Insights Page */
+.ai-insights-page {
+  width: 100%;
+  padding: 28px;
+  color: #ffffff;
+  box-sizing: border-box;
+}
+
+.ai-insights-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.ai-insights-eyebrow {
+  display: inline-block;
+  margin-bottom: 10px;
+  color: #38bdf8;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.ai-insights-header h1 {
+  margin: 0 0 10px;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.ai-insights-header p {
+  margin: 0;
+  color: #aab4c5;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.ai-insights-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+  align-items: start;
+}
+
+.ai-insight-card {
+  min-width: 0;
+  padding: 24px;
+  /* background: #151c2c;
+  border: 1px solid #30394b; */
+  background: #101820;
+  border: 1px solid #263544;
+  border-radius: 16px;
+  box-sizing: border-box;
+}
+
+.ai-card-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  margin-bottom: 18px;
+  background: #202b40;
+  border-radius: 12px;
+  font-size: 23px;
+}
+
+.ai-insight-card h2 {
+  margin: 0 0 10px;
+  color: #ffffff;
+  font-size: 21px;
+}
+
+.ai-insight-card > p {
+  min-height: 44px;
+  margin: 0 0 22px;
+  color: #aab4c5;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.ai-insight-card label {
+  display: block;
+  margin: 16px 0 8px;
+  color: #d7deea;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.ai-insight-card select {
+  width: 100%;
+  min-height: 44px;
+  padding: 10px 12px;
+  background: #0f1726;
+  border: 1px solid #3a465b;
+  border-radius: 8px;
+  color: #ffffff;
+  font-size: 14px;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.ai-insight-card select:focus {
+  border-color: #38bdf8;
+}
+
+.ai-insight-card select option {
+  background: #151c2c;
+  color: #ffffff;
+}
+
+.ai-insight-card button {
+  width: 100%;
+  min-height: 44px;
+  margin-top: 20px;
+  padding: 11px 16px;
+  background: #0284c7;
+  border: none;
+  border-radius: 8px;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.ai-insight-card button:hover:not(:disabled) {
+  background: #0369a1;
+}
+
+.ai-insight-card button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.ai-result {
+  margin-top: 24px;
+  padding: 18px;
+  background: #0f1726;
+  border: 1px solid #30394b;
+  border-radius: 10px;
+  overflow-wrap: anywhere;
+}
+
+.ai-result h3 {
+  margin: 0 0 16px;
+  color: #38bdf8;
+  font-size: 17px;
+}
+
+.ai-result-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.ai-result-field {
+  color: #d7deea;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.ai-result-field strong {
+  display: block;
+  margin-bottom: 4px;
+  color: #ffffff;
+  font-size: 14px;
+}
+
+.ai-result-field ul {
+  padding-left: 20px;
+}
+
+.ai-insights-error {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+  padding: 14px 16px;
+  background: #351b25;
+  border: 1px solid #85404b;
+  border-radius: 10px;
+  color: #fecaca;
+}
+
+.ai-insights-error p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.ai-insights-error button {
+  flex-shrink: 0;
+  padding: 7px 12px;
+  background: transparent;
+  border: 1px solid #85404b;
+  border-radius: 6px;
+  color: #fecaca;
+  cursor: pointer;
+}
+
+.ai-insights-state {
+  padding: 40px 20px;
+  color: #aab4c5;
+  text-align: center;
+}
+
+@media (min-width: 1400px) {
+  .ai-insights-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 900px) {
+  .ai-insights-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ai-insights-page {
+    padding: 22px;
+  }
+}
+
+@media (max-width: 600px) {
+  .ai-insights-page {
+    padding: 16px;
+  }
+
+  .ai-insights-header {
+    margin-bottom: 22px;
+  }
+
+  .ai-insights-header h1 {
+    font-size: 26px;
+  }
+
+  .ai-insight-card {
+    padding: 18px;
+  }
+
+  .ai-insight-card > p {
+    min-height: auto;
+  }
+
+  .ai-insights-error {
+    align-items: flex-start;
+  }
+}
