@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
-import { 
-  getPlayers, 
+import {
+  getPlayers,
   getMatches,
   getTopPerformers,
+  getTopBowlers,
  } from "../services/dashboardApi";
+import PlayerAvatar from "../components/PlayerAvatar";
 
 function Dashboard({ serverStatus }) {
   const [playerCount, setPlayerCount] = useState(0);
@@ -11,6 +13,7 @@ function Dashboard({ serverStatus }) {
   const [matchCount, setMatchCount] = useState(0);
   const [recentMatches, setRecentMatches] = useState([]);
   const [topPerformers, setTopPerformers] = useState([]);
+  const [topBowlers, setTopBowlers] = useState([]);
 
   // const [selectedPlayer, setSelectedPlayer] = useState("");
   // const [aiInsights, setAiInsights] = useState(null);
@@ -26,10 +29,11 @@ function Dashboard({ serverStatus }) {
         setLoading(true);
         setError("");
 
-        const [playersData, matchesData, performersData] = await Promise.all([
+        const [playersData, matchesData, performersData, bowlersData] = await Promise.all([
           getPlayers(),
           getMatches(),
           getTopPerformers(),
+          getTopBowlers(),
         ]);
         // console.log("TOP PERFORMERS RESPONSE:", performersData);
 
@@ -49,6 +53,7 @@ function Dashboard({ serverStatus }) {
         setTopPerformers(
           performersData.performers ?? []
         );
+        setTopBowlers(bowlersData.bowlers ?? []);
 
         // Get recent matches
         const matches = matchesData.matches || [];
@@ -137,10 +142,6 @@ function Dashboard({ serverStatus }) {
             tactical insights and AI-powered cricket analysis.
           </p>
 
-        </div>
-
-        <div className="hero-visual">
-          🏏
         </div>
 
       </section>
@@ -358,8 +359,8 @@ function Dashboard({ serverStatus }) {
 <section className="dashboard-section">
   <div className="section-header">
     <div>
-      <p className="section-label">PLAYER ANALYTICS</p>
-      <h2>Top Performers</h2>
+      <p className="section-label">Performance by players</p>
+      <h2>Top Batters</h2>
     </div>
   </div>
 
@@ -370,6 +371,12 @@ function Dashboard({ serverStatus }) {
           <div className="performer-rank">
             #{index + 1}
           </div>
+
+          <PlayerAvatar
+            name={player.name || player.playerName || "Unknown Player"}
+            imageUrl={player.image}
+            size="medium"
+          />
 
           <div className="performer-info">
             <h3>
@@ -386,6 +393,38 @@ function Dashboard({ serverStatus }) {
       ))
     ) : (
       <p>No top performer data available.</p>
+    )}
+  </div>
+</section>
+
+<section className="dashboard-section">
+  <div className="section-header">
+    <div>
+      <p className="section-label"></p>
+      <h2>Top Bowlers</h2>
+    </div>
+  </div>
+
+  <div className="performers-grid">
+    {topBowlers.length > 0 ? (
+      topBowlers.map((bowler, index) => (
+        <div className="performer-card" key={bowler.playerId || index}>
+          <div className="performer-rank">#{index + 1}</div>
+          <PlayerAvatar
+            name={bowler.name || "Unknown Player"}
+            imageUrl={bowler.image}
+            size="medium"
+          />
+          <div className="performer-info">
+            <h3>{bowler.name || "Unknown Player"}</h3>
+            <p>
+              {bowler.wickets ?? 0} wickets · {bowler.runsConceded ?? 0} runs · Econ {bowler.economy ?? 0}
+            </p>
+          </div>
+        </div>
+      ))
+    ) : (
+      <p>No top bowler data available.</p>
     )}
   </div>
 </section>

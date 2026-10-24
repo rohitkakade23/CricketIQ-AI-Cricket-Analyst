@@ -5,6 +5,7 @@ import {
    getPlayerBowlingPhaseAnalysis,
    getAIPlayerInsights,
 } from "../services/dashboardApi";
+import PlayerAvatar from "../components/PlayerAvatar";
 import "./PlayerProfile.css";
 
 function PlayerProfile({ playerId,player, onBack }) {
@@ -99,7 +100,12 @@ useEffect(() => {
       </button>
 
       <div className="player-profile-header">
-      <div>
+      <div className="player-header-content">
+      <PlayerAvatar
+        name={player?.name}
+        size="large"
+      />
+      <div className="player-header-info">
       <p className="profile-label">PLAYER PROFILE</p>
       <h1>{player?.name || "Player Profile"}</h1>
       <p className="profile-subtitle">
@@ -111,7 +117,8 @@ useEffect(() => {
      <strong>{player?.country || "—"}</strong>
     </div>
     </div>
-  </div>
+    </div>
+    </div>
 
       {loading && (
   <div className="profile-loading">

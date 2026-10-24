@@ -11,3 +11,6 @@ client/.env
 # Block build outputs
 dist/
 client/dist/
+
+# macOS metadata
+.DS_Store

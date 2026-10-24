@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { getPlayers } from "../services/dashboardApi";
+import PlayerAvatar from "../components/PlayerAvatar";
 import "./Players.css";
 
 function Players({setSelectedPlayerId,setSelectedPlayer}) {
@@ -69,6 +70,11 @@ function Players({setSelectedPlayerId,setSelectedPlayer}) {
      <div className="players-grid">
            {filteredPlayers.map((player) => (
            <div className="player-card" key={player._id}>
+           <PlayerAvatar
+             name={player.name}
+             size="medium"
+             className="player-card-avatar"
+           />
            <div className="player-card-content">
             <p className="player-card-label">PLAYER</p>
 
